@@ -185,7 +185,13 @@ ble.onRead = function (data, uuid){
 
   //グラフへ反映
   let now = new Date().getTime();
-  if (values[0] == 'TH') {      // Temperature & Humidity
+  if (values[0] == 'TE') {      // Temperature
+    if(bDispTemp) ble_data_temp.append(now, Number(values[1]));
+  }
+  else if (values[0] == 'HU') { // Temperature & Humidity
+    if(bDispHumi) ble_data_humi.append(now, Number(values[1]));
+  }
+  else if (values[0] == 'TH') { // Temperature & Humidity
     if(bDispTemp) ble_data_temp.append(now, Number(values[1]));
     if(bDispHumi) ble_data_humi.append(now, Number(values[2]));
   }
