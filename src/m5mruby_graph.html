@@ -77,13 +77,13 @@ function createTimeline() {
     const chart = new SmoothieChart({
         millisPerPixel: 20,
         grid: {
-            // fillStyle: '#ff8319',
             fillStyle: '#dddddd',
             strokeStyle: '#ffffff',
-            millisPerLine: 800
+            millisPerLine: 1000,
+            verticalSections: 5
         },
-        maxValue: 180,
-        minValue: -180
+        maxValue: 100,
+        minValue: 0,
     });
     chart.addTimeSeries(ble_data_temp, {
         strokeStyle: 'rgba(255, 192, 64, 1)',
